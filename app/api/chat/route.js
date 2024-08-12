@@ -16,8 +16,8 @@ export async function POST(req) {
     const response = await result.response;
     const text = await response.text();
     console.log(text);
-    const cleanedText = text.replace("assistant: ", "").replace(/\n$/, "");
-    return new NextResponse(cleanedText, {
+   // const cleanedText = text.replace("assistant: ", "").replace(/\n$/, "");
+    return new NextResponse(text, {
       headers: {
         'Content-Type': 'text/plain'
       }

@@ -3,6 +3,8 @@
 import { Box, Button, Stack, TextField } from "@mui/material";
 // we need state variables to store our messages
 import { useState, useRef, useEffect } from "react";
+import { marked } from "marked";
+
 
 export default function Home() {
   const [messages, setMessages] = useState([
@@ -128,8 +130,9 @@ export default function Home() {
                 color="white"
                 borderRadius={16}
                 p={3}
+                dangerouslySetInnerHTML={{ __html: marked(message.content) }}
               >
-                {message.content}
+                {/* {message.content} */}
               </Box>
             </Box>
           ))}
